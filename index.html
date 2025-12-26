@@ -3,459 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Techno-meter</title>
+    <title>Login | Techno-meter</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 13h2v8H3zm4-8h2v13H7zm4-2h2v15h-2zm4 4h2v11h-2zm4-2h2v13h-2z' fill='%2300ffcc'/></svg>">
-    <link rel="stylesheet" href="templatemo-graph-page.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffcc, transparent);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00ffcc 0%, #00ccff 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
+        }
+
+        .logo-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: #0a0e27;
+        }
+
+        .login-title {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #00ffcc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .login-subtitle {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #a0a0a0;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: rgba(0, 255, 204, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #a0a0a0;
+            cursor: pointer;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-password:hover {
+            color: #00ffcc;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 13px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #a0a0a0;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #00ffcc;
+        }
+
+        .forgot-link {
+            color: #00ffcc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-link:hover {
+            color: #00ccff;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .divider span {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            padding: 0 15px;
+            color: #a0a0a0;
+            font-size: 13px;
+            position: relative;
+        }
+
+        .demo-access {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .demo-button {
+            background: rgba(0, 255, 204, 0.1);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            color: #00ffcc;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .demo-button:hover {
+            background: rgba(0, 255, 204, 0.2);
+            border-color: rgba(0, 255, 204, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+        }
+
+        .background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border: 2px solid rgba(0, 255, 204, 0.2);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .shape1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: -100px;
+            transform: rotate(45deg);
+        }
+
+        .shape2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: -75px;
+            border-color: rgba(255, 0, 128, 0.2);
+            animation-delay: 5s;
+            animation-direction: reverse;
+        }
+
+        .shape3 {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 10%;
+            border-color: rgba(0, 204, 255, 0.2);
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(90deg); }
+            50% { transform: translate(-20px, 20px) rotate(180deg); }
+            75% { transform: translate(-30px, -20px) rotate(270deg); }
+        }
+
+        .error-message {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            color: #ff6b6b;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 15px;
+            }
+
+            .login-card {
+                padding: 30px 20px;
+            }
+
+            .login-title {
+                font-size: 24px;
+            }
+
+            .remember-forgot {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Session Check -->
-    <script>
-        // Check if user is logged in
-        const session = localStorage.getItem('technometer_session') || sessionStorage.getItem('technometer_session');
-        if (session !== 'true') {
-            window.location.href = 'login.html';
-        }
-    </script>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">
+    <div class="background-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-section">
                 <div class="logo-icon">
                     <svg viewBox="0 0 24 24">
                         <path d="M3 13h2v8H3zm4-8h2v13H7zm4-2h2v15h-2zm4 4h2v11h-2zm4-2h2v13h-2z"/>
                     </svg>
                 </div>
-                <span class="logo-text">Techno-meter</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#analytics">Analytics</a></li>
-                <li><a href="#extracting">Extracting</a></li>
-                <li><a href="#testplan">Test Plan</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" id="logoutBtn" style="color: #ff6b6b;">Logout</a></li>
-            </ul>
-            <a href="https://www.google.com/search" target="_blank" rel="noopener" title="Search">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-            </a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <h1 class="login-title">Techno-meter</h1>
+                <p class="login-subtitle">Physics Laboratory IoT Dashboard</p>
             </div>
-        </div>
-        <ul class="nav-links-mobile" id="navLinksMobile">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#analytics">Analytics</a></li>
-            <li><a href="#extracting">Extracting</a></li>
-            <li><a href="#testplan">Test Plan</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="geometric-shapes">
-            <div class="shape shape1"></div>
-            <div class="shape shape2"></div>
-            <div class="shape shape3"></div>
-            <div class="shape shape4"></div>
-            <div class="shape shape5"></div>
-            <div class="shape shape6"></div>
-        </div>
-        
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Techno-meter<br></h1>
-                <p>The chosen solution adheres to the design requirements and constraints. So, our project aims to serve the physics laboratory using a discarded toy car, an ESP32 CAM as a microcontroller, and an ultrasonic sensor to measure the distance between the car and a fixed barrier, the speed of the car, its acceleration, and to display these data on an IoT-integrated dynamic website.</p>
-                <a href="#analytics" class="cta-button">Get Started</a>
+            <div class="error-message" id="errorMessage">
+                Invalid credentials. Please try again.
             </div>
-            
-            <div class="hero-visual">
-                <div class="city-container">
-                    <div class="building building1">
-                        <div class="building-fill"></div>
-                        <div class="building-windows"></div>
-                    </div>
-                    <div class="building building2">
-                        <div class="building-fill"></div>
-                        <div class="building-windows"></div>
-                    </div>
-                    <div class="building building3">
-                        <div class="building-fill"></div>
-                        <div class="building-windows"></div>
-                    </div>
-                    <div class="building building4">
-                        <div class="building-fill"></div>
-                        <div class="building-windows"></div>
-                    </div>
-                    <div class="neon-line neon-line1"></div>
-                    <div class="neon-line neon-line2"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" class="form-input" placeholder="Enter your username" required>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Analytics Section -->
-    <section class="analytics-section" id="analytics">
-        <div class="dashboard-container">
-            <h2 class="section-title">Advanced Analytics</h2>
-
-            <!-- Chart Cards -->
-            <div class="chart-card">
-  <h3>Distance vs Time</h3>
-  <canvas id="distanceChart" width="500" height="250"></canvas>
-</div>
-
-<div class="chart-card">
-  <h3>Speed vs Time</h3>
-  <canvas id="speedChart" width="500" height="250"></canvas>
-</div>
-
-<div class="chart-card">
-  <h3>Acceleration vs Time</h3>
-  <canvas id="accelerationChart" width="500" height="250"></canvas>
-</div>
-
-<div class="chart-card">
-  <h3>Live Values</h3>
-  <p>Distance: <span id="distance">0</span> m</p>
-  <p>Speed: <span id="speed">0</span> m/s</p>
-  <p>Acceleration: <span id="acceleration">0</span> m/s²</p>
-  <p>Time: <span id="time">0</span> s</p>
-</div>
-    </section>
-
-    <!-- Extracting Section -->
-    <section id="extracting" class="extracting-section">
-        <h2 class="section-title">Data Extracting</h2>
-        <div class="extracting-grid">
-
-        <div class="extract-card">
-            <div class="video-container">
-                <iframe src="https://drive.google.com/file/d/1GUi4d0w84o7exzU5g4roy5uryNuVk2dq/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <h3>Extraction 1</h3>
-            <p>Details about the first data extraction process.</p>
-        </div>
-
-        <div class="extract-card">
-            <div class="video-container">
-                <iframe src="https://drive.google.com/file/d/1PnJBnMScKySnxgsR14zUbwN8Swq8rR2e/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <h3>Extraction 2</h3>
-            <p>Details about the second data extraction process.</p>
-        </div>
-
-    </div>
-    </section>
-
-    <section id="testplan" class="testplan-section">
-    <h2 class="section-title">Test Plan</h2>
-    <div class="testplan-grid">
-
-        <div class="testplan-card">
-    <div class="video-container">
-        <iframe src="https://drive.google.com/file/d/1FR3DuEpLUJUSi7-Jn0kX1zV2uk21QPFw/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <h3>Test plan 1</h3>
-    <p>Details about the first test plan.</p>
-</div>
-
-        <div class="testplan-card">
-    <div class="video-container">
-        <iframe src="https://drive.google.com/file/d/1PZU_ubpPbDw8iiAEOeLePoWjgSbLdkpZ/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <h3>Test plan 2</h3>
-    <p>Details about the second test plan.</p>
-</div>
-
-        <div class="testplan-card">
-    <div class="video-container">
-        <iframe src="https://drive.google.com/file/d/1YXIzbc2twJ4yIO4ce7kXUs_WrBwrhfhz/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <h3>Test plan 3</h3>
-    <p>Details about the third test plan.</p>
-</div>
-
-    </div>
-    </section>
-
-        
-
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="dashboard-container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-grid">
-                
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    
-                    <a href="mailto:Philopateer.2324039@stemnewcairo.moe.edu.eg" class="contact-item" style="text-decoration: none; color: inherit;">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>abdallah.3024001@stemnewcairo.moe.edu.eg<br>mahmoud.3024026@stemnewcairo.moe.edu.eg<br>Philopateer.2324039@stemnewcairo.moe.edu.eg<br>Yahia.3024058@stemnewcairo.moe.edu.eg</p>
-                        </div>
-                    </a>
-
-                    <a href="tel:01223937662" class="contact-item" style="text-decoration: none; color: inherit;">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-details">
-                            <h4>Phone Number</h4>
-                            <p>01223937662<br></p>
-                            <p>01222656917<br></p>
-                            <p>01023529297<br></p>
-                            <p>01015068461<br></p>
-                        </div>
-                    </a>
-
-                    <a href="https://www.google.com/maps/place/%D9%85%D8%AF%D8%B1%D8%B3%D8%A9+%D8%A7%D9%84%D9%85%D8%AA%D9%81%D9%88%D9%82%D9%8A%D9%86+%D9%81%D9%8A+%D8%A7%D9%84%D9%85%D9%88%D9%85+%D9%88%D8%A7%D9%84%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7%E2%80%AD/@28.1535185,29.4468518,7z/data=!4m10!1m3!11m2!2sd7oMp6aGQkN9725x65V5j6tNzgIBTQ!3e1!3m5!1s0x14583d04f490b673:0xf0d4baef2536850b!8m2!3d30.0290372!4d31.4266749!16s%2Fg%2F11s7y_sqv6?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="contact-item" style="text-decoration: none; color: inherit;">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h4>School Location</h4>
-                            <p>New Cairo STEM School<br></p>
-                        </div>
-                        
-                        
-                    </a>
-                    
-
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                        <button type="button" class="toggle-password" id="togglePassword">Show</button>
+                    </div>
                 </div>
+
+                <div class="remember-forgot">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="login-button">Sign In</button>
+            </form>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="demo-access">
+                <a href="dashboard.html" class="demo-button">Continue as Demo User</a>
             </div>
         </div>
-    </section>
+    </div>
 
-
-<script>
-// Mobile menu toggle
-const hamburger = document.getElementById('hamburger');
-const navLinksMobile = document.getElementById('navLinksMobile');
-
-if (hamburger && navLinksMobile) {
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navLinksMobile.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking on a link
-    const mobileLinks = document.querySelectorAll('.nav-links-mobile a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinksMobile.classList.remove('active');
+    <script>
+        // Toggle password visibility
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? 'Show' : 'Hide';
         });
-    });
-}
 
-// Logout functionality
-const logoutBtn = document.getElementById('logoutBtn');
-if (logoutBtn) {
-    logoutBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Clear session storage
-        localStorage.removeItem('technometer_session');
-        localStorage.removeItem('technometer_user');
-        sessionStorage.removeItem('technometer_session');
-        sessionStorage.removeItem('technometer_user');
-        
-        // Redirect to login page
-        window.location.href = 'login.html';
-    });
-}
+        // Form submission
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
 
-let t = 0;
-let distanceData = [];
-let speedData = [];
-let accelerationData = [];
-const maxPoints = 60;
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
 
-function smoothScrollTo(targetY, durationMs) {
-  const startY = window.scrollY || window.pageYOffset;
-  const deltaY = targetY - startY;
-  const startTime = performance.now();
+            // Simple validation (in production, this would be server-side)
+            if (username === 'admin' && password === 'technometer123') {
+                // Store login session if remember me is checked
+                if (rememberMe) {
+                    localStorage.setItem('technometer_session', 'true');
+                    localStorage.setItem('technometer_user', username);
+                } else {
+                    sessionStorage.setItem('technometer_session', 'true');
+                    sessionStorage.setItem('technometer_user', username);
+                }
+                
+                // Redirect to main page
+                window.location.href = 'dashboard.html';
+            } else {
+                // Show error message
+                errorMessage.classList.add('show');
+                setTimeout(() => {
+                    errorMessage.classList.remove('show');
+                }, 5000);
+            }
+        });
 
-  function easeInOutCubic(x) {
-    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-  }
+        // Check if user is already logged in
+        window.addEventListener('load', function() {
+            const session = localStorage.getItem('technometer_session') || sessionStorage.getItem('technometer_session');
+            if (session === 'true') {
+                window.location.href = 'dashboard.html';
+            }
+        });
 
-  function step(now) {
-    const t = Math.min(1, (now - startTime) / durationMs);
-    const eased = easeInOutCubic(t);
-    window.scrollTo(0, startY + deltaY * eased);
-    if (t < 1) requestAnimationFrame(step);
-  }
-
-  requestAnimationFrame(step);
-}
-
-function setupSmoothAnchors() {
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (!href || href === '#') return;
-      const target = document.querySelector(href);
-      if (!target) return;
-
-      e.preventDefault();
-
-      const nav = document.getElementById('navbar');
-      const navOffset = nav ? nav.offsetHeight : 0;
-      const targetY = target.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - navOffset;
-
-      smoothScrollTo(targetY, 1200);
-    });
-  });
-}
-
-setupSmoothAnchors();
-
-function drawScaledGraph(canvas, data, opts) {
-  const ctx = canvas.getContext("2d");
-  const w = canvas.width;
-  const h = canvas.height;
-  const paddingLeft = 38;
-  const paddingRight = 8;
-  const paddingTop = 8;
-  const paddingBottom = 18;
-  const plotW = Math.max(1, w - paddingLeft - paddingRight);
-  const plotH = Math.max(1, h - paddingTop - paddingBottom);
-
-  const stepY = Number(opts && opts.stepY) || 1;
-  const baseline = (opts && (opts.baseline === 0 || opts.baseline === "center")) ? opts.baseline : 0;
-  const clampMin = (opts && Number.isFinite(opts.clampMin)) ? opts.clampMin : null;
-  const clampMax = (opts && Number.isFinite(opts.clampMax)) ? opts.clampMax : null;
-  const formatYLabel = (opts && typeof opts.formatYLabel === "function") ? opts.formatYLabel : (v) => String(v);
-
-  const finite = (data || []).filter(v => Number.isFinite(v));
-  const rawMin = finite.length ? Math.min(...finite) : 0;
-  const rawMax = finite.length ? Math.max(...finite) : 1;
-
-  let minVal = rawMin;
-  let maxVal = rawMax;
-
-  if (baseline === 0) {
-    minVal = Math.min(0, minVal);
-    maxVal = Math.max(0, maxVal);
-  } else if (baseline === "center") {
-    const abs = Math.max(Math.abs(minVal), Math.abs(maxVal), stepY);
-    minVal = -abs;
-    maxVal = abs;
-  }
-
-  if (clampMin !== null) minVal = Math.max(minVal, clampMin);
-  if (clampMax !== null) maxVal = Math.min(maxVal, clampMax);
-  if (minVal === maxVal) maxVal = minVal + stepY;
-
-  const niceMin = Math.floor(minVal / stepY) * stepY;
-  const niceMax = Math.ceil(maxVal / stepY) * stepY;
-  const range = Math.max(stepY, niceMax - niceMin);
-
-  const xForIndex = (i) => paddingLeft + (i * (plotW / Math.max(1, maxPoints - 1)));
-  const yForValue = (v) => paddingTop + (niceMax - v) * (plotH / range);
-
-  ctx.clearRect(0, 0, w, h);
-
-  ctx.strokeStyle = "rgba(255,255,255,0.12)";
-  ctx.fillStyle = "rgba(255,255,255,0.65)";
-  ctx.lineWidth = 1;
-  ctx.font = "11px Arial";
-
-  for (let yVal = niceMin; yVal <= niceMax + 1e-9; yVal += stepY) {
-    const y = yForValue(yVal);
-    ctx.beginPath();
-    ctx.moveTo(paddingLeft, y);
-    ctx.lineTo(paddingLeft + plotW, y);
-    ctx.stroke();
-    ctx.fillText(formatYLabel(yVal), 4, y + 4);
-  }
-
-  ctx.strokeStyle = "rgba(255,255,255,0.25)";
-  ctx.beginPath();
-  ctx.moveTo(paddingLeft, paddingTop);
-  ctx.lineTo(paddingLeft, paddingTop + plotH);
-  ctx.lineTo(paddingLeft + plotW, paddingTop + plotH);
-  ctx.stroke();
-
-  if (baseline === 0 && niceMin <= 0 && niceMax >= 0) {
-    const y0 = yForValue(0);
-    ctx.strokeStyle = "rgba(255,255,255,0.22)";
-    ctx.beginPath();
-    ctx.moveTo(paddingLeft, y0);
-    ctx.lineTo(paddingLeft + plotW, y0);
-    ctx.stroke();
-  }
-
-  if (baseline === "center") {
-    const yMid = yForValue(0);
-    ctx.strokeStyle = "rgba(255,255,255,0.22)";
-    ctx.beginPath();
-    ctx.moveTo(paddingLeft, yMid);
-    ctx.lineTo(paddingLeft + plotW, yMid);
-    ctx.stroke();
-  }
-
-  ctx.strokeStyle = "#00ffcc";
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  (data || []).forEach((v, i) => {
-    const value = Number.isFinite(v) ? v : 0;
-    const x = xForIndex(i);
-    const y = yForValue(value);
-    if (i === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
-  });
-  ctx.stroke();
-  ctx.lineWidth = 1;
-}
-
-setInterval(() => {
-  fetch("http://192.168.4.1/data")
-    .then(res => res.json())
-    .then(d => {
-      const distance = Number(d.distance);
-      const speed = Number(d.speed);
-      const acceleration = Number(d.acceleration);
-      const time = Number(d.time);
-
-      document.getElementById("distance").innerText = Number.isFinite(distance) ? distance.toFixed(2) : "0.00";
-      document.getElementById("speed").innerText = Number.isFinite(speed) ? speed : 0;
-      document.getElementById("acceleration").innerText = Number.isFinite(acceleration) ? acceleration : 0;
-      document.getElementById("time").innerText = Number.isFinite(time) ? time : 0;
-
-      distanceData.push(Number.isFinite(distance) ? distance : 0);
-      speedData.push(Number.isFinite(speed) ? speed : 0);
-      accelerationData.push(Number.isFinite(acceleration) ? acceleration : 0);
-
-      if (distanceData.length > maxPoints) distanceData.shift();
-      if (speedData.length > maxPoints) speedData.shift();
-      if (accelerationData.length > maxPoints) accelerationData.shift();
-
-      drawScaledGraph(document.getElementById("distanceChart"), distanceData, {
-        stepY: 0.1,
-        baseline: 0,
-        clampMin: 0,
-        clampMax: 1,
-        formatYLabel: (m) => String(Math.round(m * 100))
-      });
-      drawScaledGraph(document.getElementById("speedChart"), speedData, { stepY: 5, baseline: 0 });
-      drawScaledGraph(document.getElementById("accelerationChart"), accelerationData, { stepY: 1, baseline: "center" });
-    });
-}, 200);
-</script>
-
-    <div style="width: 100%; display: flex; justify-content: center; padding: 24px 16px;">
-        <img src="images/technometer.png" alt="Techno-meter" style="width: min(350px, 100%); height: auto;" />
-    </div>
-
+        // Auto-focus on username field
+        document.getElementById('username').focus();
+    </script>
 </body>
 </html>
