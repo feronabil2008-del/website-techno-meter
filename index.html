@@ -6,9 +6,16 @@
     <title>Techno-meter</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M3 13h2v8H3zm4-8h2v13H7zm4-2h2v15h-2zm4 4h2v11h-2zm4-2h2v13h-2z' fill='%2300ffcc'/></svg>">
     <link rel="stylesheet" href="templatemo-graph-page.css">
-
 </head>
 <body>
+    <!-- Session Check -->
+    <script>
+        // Check if user is logged in
+        const session = localStorage.getItem('technometer_session') || sessionStorage.getItem('technometer_session');
+        if (session !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -26,6 +33,7 @@
                 <li><a href="#extracting">Extracting</a></li>
                 <li><a href="#testplan">Test Plan</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="logoutBtn" style="color: #ff6b6b;">Logout</a></li>
             </ul>
             <a href="https://www.google.com/search" target="_blank" rel="noopener" title="Search">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -244,6 +252,23 @@ if (hamburger && navLinksMobile) {
             hamburger.classList.remove('active');
             navLinksMobile.classList.remove('active');
         });
+    });
+}
+
+// Logout functionality
+const logoutBtn = document.getElementById('logoutBtn');
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Clear session storage
+        localStorage.removeItem('technometer_session');
+        localStorage.removeItem('technometer_user');
+        sessionStorage.removeItem('technometer_session');
+        sessionStorage.removeItem('technometer_user');
+        
+        // Redirect to login page
+        window.location.href = 'login.html';
     });
 }
 
