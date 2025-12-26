@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Techno-meter</title>
+    <link rel="stylesheet" href="templatemo-graph-page.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 13h2v8H3zm4-8h2v13H7zm4-2h2v15h-2zm4 4h2v11h-2zm4-2h2v13h-2z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Techno-meter</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#extracting">Extracting</a></li>
+                <li><a href="#testplan">Test Plan</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://www.google.com/search" target="_blank" rel="noopener" title="Search">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-links-mobile" id="navLinksMobile">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#extracting">Extracting</a></li>
+            <li><a href="#testplan">Test Plan</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="geometric-shapes">
+            <div class="shape shape1"></div>
+            <div class="shape shape2"></div>
+            <div class="shape shape3"></div>
+            <div class="shape shape4"></div>
+            <div class="shape shape5"></div>
+            <div class="shape shape6"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Techno-meter<br></h1>
+                <p>The chosen solution adheres to the design requirements and constraints. So, our project aims to serve the physics laboratory using a discarded toy car, an ESP32 CAM as a microcontroller, and an ultrasonic sensor to measure the distance between the car and a fixed barrier, the speed of the car, its acceleration, and to display these data on an IoT-integrated dynamic website.</p>
+                <a href="#analytics" class="cta-button">Get Started</a>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="city-container">
+                    <div class="building building1">
+                        <div class="building-fill"></div>
+                        <div class="building-windows"></div>
+                    </div>
+                    <div class="building building2">
+                        <div class="building-fill"></div>
+                        <div class="building-windows"></div>
+                    </div>
+                    <div class="building building3">
+                        <div class="building-fill"></div>
+                        <div class="building-windows"></div>
+                    </div>
+                    <div class="building building4">
+                        <div class="building-fill"></div>
+                        <div class="building-windows"></div>
+                    </div>
+                    <div class="neon-line neon-line1"></div>
+                    <div class="neon-line neon-line2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="analytics-section" id="analytics">
+        <div class="dashboard-container">
+            <h2 class="section-title">Advanced Analytics</h2>
+
+            <!-- Chart Cards -->
+            <div class="chart-card">
+  <h3>Distance vs Time</h3>
+  <canvas id="distanceChart" width="500" height="250"></canvas>
+</div>
+
+<div class="chart-card">
+  <h3>Speed vs Time</h3>
+  <canvas id="speedChart" width="500" height="250"></canvas>
+</div>
+
+<div class="chart-card">
+  <h3>Acceleration vs Time</h3>
+  <canvas id="accelerationChart" width="500" height="250"></canvas>
+</div>
+
+<div class="chart-card">
+  <h3>Live Values</h3>
+  <p>Distance: <span id="distance">0</span> m</p>
+  <p>Speed: <span id="speed">0</span> m/s</p>
+  <p>Acceleration: <span id="acceleration">0</span> m/s²</p>
+  <p>Time: <span id="time">0</span> s</p>
+</div>
+    </section>
+
+    <!-- Extracting Section -->
+    <section id="extracting" class="extracting-section">
+        <h2 class="section-title">Data Extracting</h2>
+        <div class="extracting-grid">
+
+        <div class="extract-card">
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1GUi4d0w84o7exzU5g4roy5uryNuVk2dq/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3>Extraction 1</h3>
+            <p>Details about the first data extraction process.</p>
+        </div>
+
+        <div class="extract-card">
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1PnJBnMScKySnxgsR14zUbwN8Swq8rR2e/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3>Extraction 2</h3>
+            <p>Details about the second data extraction process.</p>
+        </div>
+
+        <div class="extract-card">
+            <div class="video-container">
+                <a href="https://drive.google.com/drive/folders/1Z89Ry0XqlmgMOGzEMQBYPIVsTO0CcW3m?usp=drive_link" target="_blank" rel="noopener">Open video folder</a>
+            </div>
+            <h3>Extraction 3</h3>
+            <p>Details about the third data extraction process.</p>
+        </div>
+
+    </div>
+    </section>
+
+
+    <section id="testplan" class="testplan-section">
+    <h2 class="section-title">Test Plan</h2>
+    <div class="testplan-grid">
+
+        <div class="testplan-card">
+    <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/1FR3DuEpLUJUSi7-Jn0kX1zV2uk21QPFw/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <h3>Test plan 1</h3>
+    <p>Details about the first test plan.</p>
+</div>
+
+        <div class="testplan-card">
+    <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/1PZU_ubpPbDw8iiAEOeLePoWjgSbLdkpZ/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <h3>Test plan 2</h3>
+    <p>Details about the second test plan.</p>
+</div>
+
+        <div class="testplan-card">
+    <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/1YXIzbc2twJ4yIO4ce7kXUs_WrBwrhfhz/preview" width="100%" height="400" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <h3>Test plan 3</h3>
+    <p>Details about the third test plan.</p>
+</div>
+
+    </div>
+    </section>
+
+        
+
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="dashboard-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <a href="mailto:Philopateer.2324039@stemnewcairo.moe.edu.eg" class="contact-item" style="text-decoration: none; color: inherit;">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email Address</h4>
+                            <p>abdallah.3024001@stemnewcairo.moe.edu.eg<br>mahmoud.3024026@stemnewcairo.moe.edu.eg<br>Philopateer.2324039@stemnewcairo.moe.edu.eg<br>Yahia.3024058@stemnewcairo.moe.edu.eg</p>
+                        </div>
+                    </a>
+
+                    <a href="tel:01223937662" class="contact-item" style="text-decoration: none; color: inherit;">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Phone Number</h4>
+                            <p>01223937662<br></p>
+                            <p>01222656917<br></p>
+                            <p>01023529297<br></p>
+                            <p>01015068461<br></p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.google.com/maps/place/%D9%85%D8%AF%D8%B1%D8%B3%D8%A9+%D8%A7%D9%84%D9%85%D8%AA%D9%81%D9%88%D9%82%D9%8A%D9%86+%D9%81%D9%8A+%D8%A7%D9%84%D9%85%D9%88%D9%85+%D9%88%D8%A7%D9%84%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7%E2%80%AD/@28.1535185,29.4468518,7z/data=!4m10!1m3!11m2!2sd7oMp6aGQkN9725x65V5j6tNzgIBTQ!3e1!3m5!1s0x14583d04f490b673:0xf0d4baef2536850b!8m2!3d30.0290372!4d31.4266749!16s%2Fg%2F11s7y_sqv6?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="contact-item" style="text-decoration: none; color: inherit;">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>School Location</h4>
+                            <p>New Cairo STEM School<br></p>
+                        </div>
+                        
+                        
+                    </a>
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script>
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinksMobile = document.getElementById('navLinksMobile');
+
+if (hamburger && navLinksMobile) {
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinksMobile.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = document.querySelectorAll('.nav-links-mobile a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinksMobile.classList.remove('active');
+        });
+    });
+}
+
+let t = 0;
+let distanceData = [];
+let speedData = [];
+let accelerationData = [];
+const maxPoints = 60;
+
+function smoothScrollTo(targetY, durationMs) {
+  const startY = window.scrollY || window.pageYOffset;
+  const deltaY = targetY - startY;
+  const startTime = performance.now();
+
+  function easeInOutCubic(x) {
+    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  }
+
+  function step(now) {
+    const t = Math.min(1, (now - startTime) / durationMs);
+    const eased = easeInOutCubic(t);
+    window.scrollTo(0, startY + deltaY * eased);
+    if (t < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+function setupSmoothAnchors() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+
+      const nav = document.getElementById('navbar');
+      const navOffset = nav ? nav.offsetHeight : 0;
+      const targetY = target.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - navOffset;
+
+      smoothScrollTo(targetY, 1200);
+    });
+  });
+}
+
+setupSmoothAnchors();
+
+function drawScaledGraph(canvas, data, opts) {
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+  const paddingLeft = 38;
+  const paddingRight = 8;
+  const paddingTop = 8;
+  const paddingBottom = 18;
+  const plotW = Math.max(1, w - paddingLeft - paddingRight);
+  const plotH = Math.max(1, h - paddingTop - paddingBottom);
+
+  const stepY = Number(opts && opts.stepY) || 1;
+  const baseline = (opts && (opts.baseline === 0 || opts.baseline === "center")) ? opts.baseline : 0;
+  const clampMin = (opts && Number.isFinite(opts.clampMin)) ? opts.clampMin : null;
+  const clampMax = (opts && Number.isFinite(opts.clampMax)) ? opts.clampMax : null;
+  const formatYLabel = (opts && typeof opts.formatYLabel === "function") ? opts.formatYLabel : (v) => String(v);
+
+  const finite = (data || []).filter(v => Number.isFinite(v));
+  const rawMin = finite.length ? Math.min(...finite) : 0;
+  const rawMax = finite.length ? Math.max(...finite) : 1;
+
+  let minVal = rawMin;
+  let maxVal = rawMax;
+
+  if (baseline === 0) {
+    minVal = Math.min(0, minVal);
+    maxVal = Math.max(0, maxVal);
+  } else if (baseline === "center") {
+    const abs = Math.max(Math.abs(minVal), Math.abs(maxVal), stepY);
+    minVal = -abs;
+    maxVal = abs;
+  }
+
+  if (clampMin !== null) minVal = Math.max(minVal, clampMin);
+  if (clampMax !== null) maxVal = Math.min(maxVal, clampMax);
+  if (minVal === maxVal) maxVal = minVal + stepY;
+
+  const niceMin = Math.floor(minVal / stepY) * stepY;
+  const niceMax = Math.ceil(maxVal / stepY) * stepY;
+  const range = Math.max(stepY, niceMax - niceMin);
+
+  const xForIndex = (i) => paddingLeft + (i * (plotW / Math.max(1, maxPoints - 1)));
+  const yForValue = (v) => paddingTop + (niceMax - v) * (plotH / range);
+
+  ctx.clearRect(0, 0, w, h);
+
+  ctx.strokeStyle = "rgba(255,255,255,0.12)";
+  ctx.fillStyle = "rgba(255,255,255,0.65)";
+  ctx.lineWidth = 1;
+  ctx.font = "11px Arial";
+
+  for (let yVal = niceMin; yVal <= niceMax + 1e-9; yVal += stepY) {
+    const y = yForValue(yVal);
+    ctx.beginPath();
+    ctx.moveTo(paddingLeft, y);
+    ctx.lineTo(paddingLeft + plotW, y);
+    ctx.stroke();
+    ctx.fillText(formatYLabel(yVal), 4, y + 4);
+  }
+
+  ctx.strokeStyle = "rgba(255,255,255,0.25)";
+  ctx.beginPath();
+  ctx.moveTo(paddingLeft, paddingTop);
+  ctx.lineTo(paddingLeft, paddingTop + plotH);
+  ctx.lineTo(paddingLeft + plotW, paddingTop + plotH);
+  ctx.stroke();
+
+  if (baseline === 0 && niceMin <= 0 && niceMax >= 0) {
+    const y0 = yForValue(0);
+    ctx.strokeStyle = "rgba(255,255,255,0.22)";
+    ctx.beginPath();
+    ctx.moveTo(paddingLeft, y0);
+    ctx.lineTo(paddingLeft + plotW, y0);
+    ctx.stroke();
+  }
+
+  if (baseline === "center") {
+    const yMid = yForValue(0);
+    ctx.strokeStyle = "rgba(255,255,255,0.22)";
+    ctx.beginPath();
+    ctx.moveTo(paddingLeft, yMid);
+    ctx.lineTo(paddingLeft + plotW, yMid);
+    ctx.stroke();
+  }
+
+  ctx.strokeStyle = "#00ffcc";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  (data || []).forEach((v, i) => {
+    const value = Number.isFinite(v) ? v : 0;
+    const x = xForIndex(i);
+    const y = yForValue(value);
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.lineWidth = 1;
+}
+
+setInterval(() => {
+  fetch("http://192.168.4.1/data")
+    .then(res => res.json())
+    .then(d => {
+      const distance = Number(d.distance);
+      const speed = Number(d.speed);
+      const acceleration = Number(d.acceleration);
+      const time = Number(d.time);
+
+      document.getElementById("distance").innerText = Number.isFinite(distance) ? distance.toFixed(2) : "0.00";
+      document.getElementById("speed").innerText = Number.isFinite(speed) ? speed : 0;
+      document.getElementById("acceleration").innerText = Number.isFinite(acceleration) ? acceleration : 0;
+      document.getElementById("time").innerText = Number.isFinite(time) ? time : 0;
+
+      distanceData.push(Number.isFinite(distance) ? distance : 0);
+      speedData.push(Number.isFinite(speed) ? speed : 0);
+      accelerationData.push(Number.isFinite(acceleration) ? acceleration : 0);
+
+      if (distanceData.length > maxPoints) distanceData.shift();
+      if (speedData.length > maxPoints) speedData.shift();
+      if (accelerationData.length > maxPoints) accelerationData.shift();
+
+      drawScaledGraph(document.getElementById("distanceChart"), distanceData, {
+        stepY: 0.1,
+        baseline: 0,
+        clampMin: 0,
+        clampMax: 1,
+        formatYLabel: (m) => String(Math.round(m * 100))
+      });
+      drawScaledGraph(document.getElementById("speedChart"), speedData, { stepY: 5, baseline: 0 });
+      drawScaledGraph(document.getElementById("accelerationChart"), accelerationData, { stepY: 1, baseline: "center" });
+    });
+}, 200);
+</script>
+
+    <div style="width: 100%; display: flex; justify-content: center; padding: 24px 16px;">
+        <img src="images/technometer.png" alt="Techno-meter" style="width: min(350px, 100%); height: auto;" />
+    </div>
+
+</body>
+</html>
